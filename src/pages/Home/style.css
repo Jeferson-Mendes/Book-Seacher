@@ -1,0 +1,100 @@
+
+.home-page .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 3.8rem;
+    background-color: #f4f6ff;
+}
+
+.home-page .menu h1 {
+    color: #ed6663;
+    margin-left: 1.5rem;
+}
+
+.home-page .menu div a{
+    color: #ed6663;
+    margin-right: 1.5rem;
+}
+
+.home-page header .welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.home-page header .welcome .field-message h1 {
+    font-size: 3.4rem;
+    color: #00334e;
+    font-weight: bold;
+    width: 30rem;
+}
+
+.home-page header .welcome .field-message p {
+    font-size: 2.4rem;
+    color: #ed6663;
+    width: 30rem;
+}
+
+.home-page header .welcome .field-message button {
+    font-size: 1.5rem;
+    color: #f5f1da;
+    background-color: #00334e;
+    margin-top: 2rem;
+    border-radius: 20px;
+    width: 24rem;
+    height: 6rem;
+    font-family: 'Lexend Peta', sans-serif;
+
+    transition: 600ms;
+}
+
+.home-page header .welcome .field-message button:hover {
+    
+    opacity: 0.5;
+    transform: scale(1.1);
+}
+
+.home-page header .welcome img {
+    margin-top: 4rem;
+    width: 60rem;
+}
+
+.tools {
+    background-color: #383e56;
+    margin-top: 2rem;
+}
+
+.tools .field-tools h1 {
+    font-size: 2rem;
+    text-align: center;
+    color: #f5f1da;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    padding: 0.5rem;
+}
+
+.tools .field-tools .img-tools {
+    padding: 2rem;
+}
+
+.tools .field-tools .img-tools ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f6ff;
+    opacity: 0.5;
+    border-radius: 8rem;
+    width: 44rem;
+    padding: 1.5rem;
+    margin: auto;
+}
+
+.tools .field-tools .img-tools ul li img {
+    width: 8rem;
+    margin: 1rem;
+    opacity: 0.8;
+}

@@ -1,0 +1,61 @@
+
+.searchField {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.close {
+    float: right;
+    font-size: 6rem;
+    padding: 2rem;
+    color: #ed6663;
+    cursor: pointer;
+}
+
+.searchField .searchMessage {
+    padding-top: 14rem;
+    padding-bottom: 2rem;
+    margin-left: 2rem;
+}
+
+.searchField .searchMessage h2 {
+    font-size: 4rem;
+    color: #ffbb91;
+    width: 30rem;
+}
+
+.searchField .searchMessage p {
+    font-size: 2.2rem;
+    color: #f6f6f6;
+    width: 30rem;
+}
+
+.searchField form {
+    text-align: center;
+}
+
+.searchField form input {
+    width: 80rem;
+    font-size: 2.4rem;
+    margin-left: 2rem;
+    background-color: #c9c9c9;
+    height: 8rem;
+    color: #1b262c;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.searchField form svg {
+    font-size: 4rem;
+    position: relative;
+    top: 1rem;
+    color: #00334e;
+    right: 8rem;
+}
