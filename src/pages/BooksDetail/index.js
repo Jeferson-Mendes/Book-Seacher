@@ -21,12 +21,14 @@ const BooksDetail = ({ onHide })=> {
         e.preventDefault()
         
         fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`)
-        .then(data => data.json())
+        .then(response => response.json())
         .then(data => {
-            console.log(data.items[0].volumeInfo.title)
             setBooks([...data.items])
 
-        }).catch(erro => alert("erro"))
+        }).catch(()=> {
+             alert('There is a ERROR, try again with other Keyword')
+             return window.location.reload(false);
+            } )
 
         setBookFieldHide(false)
     }
