@@ -1,40 +1,57 @@
-import React, {useState, useEffect} from  'react';
+import React, {useState} from  'react';
 
 import { FiSearch } from 'react-icons/fi';
 
+import Books from '../../components/Books';
+
 import './style.css';
 
-const BooksDetail = (props)=> {
-    const [modalDisplay, setModalDisplay] = useState('none')
+const BooksDetail = ({ onHide })=> {
 
+    const [searchTerm, setSearchTerm] = useState('')
+    const [books, setBooks] = useState([])
+    const [bookFieldHide, setBookFieldHide] = useState(true)
 
-    useEffect(()=>{
-        if(props.modalState === 'block') {
-            console.log('Se aparecer muito, tá doido')
-            setModalDisplay('block')
+    function handleInputChange(e) {
+        const inputvalue = e.target.value
+        setSearchTerm(inputvalue)
+    }
 
-        }
+    async function handleSearchSubmit(e) {
+        e.preventDefault()
+        
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`)
+        .then(data => data.json())
+        .then(data => {
+            console.log(data.items[0].volumeInfo.title)
+            setBooks([...data.items])
 
-    },[props.modalState])
+        }).catch(erro => alert("erro"))
 
-    function handleClickX() {
-            setModalDisplay('none')
-            console.log('Se aparecer muito, tá doido')
+        setBookFieldHide(false)
     }
 
     return (
-        <div className="searchField resultField" style={{display:`${modalDisplay}`}}>
-            <span onClick={handleClickX} className="close">&times;</span>
+        <div className="searchField resultField" >
+            <span onClick={onHide} className="close">&times;</span>
 
             <div className='searchMessage'>
                 <h2>Know't Book name?</h2>
                 <p>No problem. search for author, dates, first name...</p>
             </div>
 
-            <form >
-                <input type="text" placeholder='Enter a KEYWORD and find your book.'/>
-                <FiSearch/>
+            <form onSubmit={handleSearchSubmit} >
+                <input 
+                    type="text"
+                    value={searchTerm}
+                    onChange={handleInputChange}
+                    placeholder='Enter a KEYWORD and find your book.'/>
+                <FiSearch onClick={handleSearchSubmit}/>
             </form>
+
+            {bookFieldHide ? null : <Books bookContent={books} searchTerm={searchTerm} /> }
+            
+            
         </div>
     )
 }

@@ -7,17 +7,12 @@ import jsLogo from '../../assets/javascript.svg'
 import reactLogo from '../../assets/react.svg'
 
 import BooksDetail from '../BooksDetail';
+import Footer from '../../components/Footer';
 
 import './style.css';
 const Home = () => {
-    const [modalState, setModalState] = useState('none');
+    const [modalStateHide, setModalStateHide] = useState(true);
 
-    function handleClickButton () {
-        if(modalState === 'none') {
-            return setModalState('block')
-        }
-        setModalState('none')
-    }
 
     return(
         <div className="home-page">
@@ -25,8 +20,8 @@ const Home = () => {
                 <nav className="menu" >
                     <h1>Books Searcher</h1>
                     <div>
-                        <a href="google.com">About</a>
-                        <a href="google.com">Contact</a>
+                        <a href="http://github.com/jeferson-mendes/book-seacher">About</a>
+                        <a href="http://linkedin.com/in/jeferson-mendes">Contact</a>
                     </div>
                 </nav>
 
@@ -34,7 +29,7 @@ const Home = () => {
                     <div className="field-message">
                         <h1>Expand Your Mind!</h1>
                         <p>Discover the best books and up your mindset. Read up!</p>
-                        <button onClick={handleClickButton}>
+                        <button onClick={()=> setModalStateHide(false)}>
                             Search now!
                         </button>
                     </div>
@@ -42,7 +37,7 @@ const Home = () => {
                 </div>
             </header>
         
-            <BooksDetail modalState={modalState} />
+            {modalStateHide ? null : <BooksDetail onHide={()=> setModalStateHide(true)} /> } 
 
             <section className='tools'>
                 <div className="field-tools">
@@ -57,6 +52,8 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
+            <Footer/>
         </div>
     )
 }

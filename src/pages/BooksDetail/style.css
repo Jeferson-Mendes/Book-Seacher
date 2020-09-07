@@ -20,7 +20,7 @@
 }
 
 .searchField .searchMessage {
-    padding-top: 14rem;
+    padding-top: 8rem;
     padding-bottom: 2rem;
     margin-left: 2rem;
 }
@@ -38,15 +38,17 @@
 }
 
 .searchField form {
-    text-align: center;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .searchField form input {
-    width: 80rem;
-    font-size: 2.4rem;
+    width: 70rem;
+    font-size: 2rem;
     margin-left: 2rem;
+    margin-bottom: 4rem;
     background-color: #c9c9c9;
-    height: 8rem;
+    height: 6rem;
     color: #1b262c;
     border-radius: 2rem;
     padding: 2rem;
@@ -58,4 +60,11 @@
     top: 1rem;
     color: #00334e;
     right: 8rem;
+
+    transition: 600ms;
 }
+
+.searchField form svg:hover {
+    transform: scale(1.1);
+}
+

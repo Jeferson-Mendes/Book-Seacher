@@ -1,0 +1,61 @@
+
+.booksField {
+    display: flex;
+    align-items: center;
+    margin-top: 8rem;
+    justify-content: center;
+}
+
+.booksField .field {
+    width: 88rem;
+    background-color: #c9c9c9;
+    min-height: 100vh;
+    border-radius: 2rem;
+}
+
+.booksField .field h4 {
+    font-size: 2rem;
+    padding: 2rem;
+    color: #1b262c;
+}
+
+.booksField .field .grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 26rem);
+    gap: 2rem;
+}
+
+.booksField .field .grid figure {
+    background-color: #c9c9c9;
+    text-align: center;
+    width: 26rem;
+    min-height: 38rem;
+}
+
+.booksField .field .grid figure img {
+    width: 21rem;
+    height: 28rem;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1rem;
+
+    transition: 400ms;
+}
+
+.booksField .field .grid figure img:hover {
+    transform: scale(1.1);
+    opacity: 0.6;
+}
+
+.booksField .field .grid figure figcaption {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+    color: #00334e;
+    font-weight: bold;
+}
+
+.booksField .field .grid figure p {
+    padding: 1.4rem;
+    font-size: 1.2rem;
+}

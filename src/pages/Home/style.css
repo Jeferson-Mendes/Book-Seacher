@@ -43,6 +43,7 @@
     font-size: 1.5rem;
     color: #f5f1da;
     background-color: #00334e;
+    outline: none;
     margin-top: 2rem;
     border-radius: 20px;
     width: 24rem;
@@ -94,7 +95,7 @@
 }
 
 .tools .field-tools .img-tools ul li img {
-    width: 8rem;
+    width: 6rem;
     margin: 1rem;
     opacity: 0.8;
 }
